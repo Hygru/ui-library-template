@@ -1,0 +1,74 @@
+{
+    "name": "ui-library",
+    "version": "1.0.0",
+    "description": "a react ui component library",
+    "main": "lib/cjs/index.js",
+    "module": "lib/esm/index.js",
+    "author": "Hygru",
+    "license": "MIT",
+    "scripts": {
+        "commit-msg": "commitlint --config .commitlintrc.js -e -V",
+        "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+        "build": "./node_modules/.bin/rollup -c",
+        "doc:dev": "./node_modules/.bin/docz dev",
+        "doc:build": "./node_modules/.bin/docz build",
+        "doc:serve": "yarn doc:build && ./node_modules/.bin/docz serve"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.15.5",
+        "@babel/plugin-external-helpers": "^7.14.5",
+        "@babel/plugin-transform-runtime": "^7.15.0",
+        "@babel/preset-env": "^7.15.6",
+        "@babel/preset-react": "^7.14.5",
+        "@babel/preset-typescript": "^7.15.0",
+        "@babel/runtime": "^7.15.4",
+        "@babel/runtime-corejs3": "^7.15.4",
+        "@commitlint/cli": "^13.1.0",
+        "@commitlint/config-conventional": "^13.1.0",
+        "@rollup/plugin-image": "^2.1.1",
+        "@types/react": "^17.0.24",
+        "@types/react-dom": "^17.0.9",
+        "@typescript-eslint/eslint-plugin": "^4.31.1",
+        "@typescript-eslint/parser": "^4.31.1",
+        "conventional-changelog-cli": "^2.1.1",
+        "docz": "^2.3.1",
+        "eslint": "^7",
+        "eslint-config-airbnb": "^18.2.1",
+        "eslint-plugin-import": "^2.22.1",
+        "eslint-plugin-jsx-a11y": "^6.4.1",
+        "eslint-plugin-react": "^7.21.5",
+        "eslint-plugin-react-hooks": "^4",
+        "gatsby-plugin-sass": "^4.14.0",
+        "husky": "^7.0.0",
+        "lint-staged": "^11.1.2",
+        "node-sass": "^6.0.1",
+        "prettier": "^2.4.1",
+        "rollup": "^2.57.0",
+        "rollup-plugin-babel": "^4.4.0",
+        "rollup-plugin-clear": "^2.0.7",
+        "rollup-plugin-commonjs": "^10.1.0",
+        "rollup-plugin-node-resolve": "^5.2.0",
+        "rollup-plugin-progress": "^1.1.2",
+        "rollup-plugin-styles": "^3.14.1",
+        "rollup-plugin-terser": "^7.0.2",
+        "rollup-plugin-typescript2": "^0.30.0",
+        "stylelint": "^13.13.1",
+        "stylelint-config-standard": "^22.0.0",
+        "typescript": "^4.4.3"
+    },
+    "lint-staged": {
+        "./src/*.{ts,tsx,js}": [
+            "eslint --config .eslintrc.js"
+        ],
+        "./src/*.{css,less,scss}": [
+            "stylelint --config .stylelintrc.js"
+        ],
+        "*.{ts,tsx,js,json,html,yml,css,less,scss,md}": [
+            "prettier --write"
+        ]
+    },
+    "dependencies": {
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2"
+    }
+}
